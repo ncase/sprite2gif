@@ -7,7 +7,7 @@ body {
 #step_container {
     width:963px;
     height:400px;
-    margin: 100px auto;
+    margin: 40px auto;
 }
 .step {
     float:left;
@@ -188,4 +188,14 @@ body {
 }
 button {
     cursor: pointer;
+}
+
+
+
+#header {
+    width:100%;
+    background: #000;
+    text-align: center;
+    padding:50px 0;
+    color:#fff;
 }

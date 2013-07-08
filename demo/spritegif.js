@@ -68,7 +68,7 @@ function loadExample(example){
 
 };
 
-loadExample("monster");
+loadExample("origami");
 
 ///////////////////////
 
