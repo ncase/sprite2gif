@@ -39,10 +39,17 @@ dropbox.addEventListener("drop", drop, false);
 
 /////////////////////
 
+var IMAGE_LOADED = false;
+
 var spritesheet_image = document.getElementById("spritesheet_image");
 var spritesheet_json = document.getElementById("spritesheet_json");
 
 function loadExample(example){
+
+	IMAGE_LOADED = false;
+	spritesheet_image.onload = function(){
+		IMAGE_LOADED=true;
+	};
 
     switch(example){
         case "monster":
@@ -80,6 +87,11 @@ context = canvas.getContext('2d');
 
 function recordAnimation(){
 
+	if(!IMAGE_LOADED){
+        alert("Image not loaded yet! Be patient.");
+		return;
+	}
+
     document.getElementById("start_recording_button").style.display = "none";
     document.getElementById("recording_progress").style.display = "block";
     var progress = document.getElementById("recording_progress_bar");
@@ -94,6 +106,7 @@ function recordAnimation(){
     }catch(e){
         alert("JSON is invalid!");
         reset();
+		return;
     }
 
 //spritesheet.onload = function(){
