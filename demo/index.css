@@ -1,0 +1,191 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway:200);
+body {
+    margin: 0;
+    font-family: Raleway;
+    font-weight: 200;
+}
+#step_container {
+    width:963px;
+    height:400px;
+    margin: 100px auto;
+}
+.step {
+    float:left;
+    width:300px;
+    height:350px;
+    position: relative;
+    margin-left:30px;
+}
+.step #caption{
+    position: absolute;
+    width:350px; left:-25px;
+    height:50px;
+    font-size: 30px;
+    text-align: center;
+}
+.step #sub_caption{
+    position: absolute;
+    width:300px; bottom:-65px;
+    height:50px;
+    font-size: 18px;
+    text-align: center;
+    color:#999;
+}
+.step #sub_caption a{
+    color: #000;
+}
+.step #container{
+    position: absolute;
+    bottom:0;
+    width:300px;
+    height:300px;
+    background: #eee;
+    border: 1px solid rgba(0,0,0,0.3);
+
+    overflow: hidden;
+}
+#spritesheet_image {
+    position: absolute;
+    width:100%;
+    border: 0;
+}
+#spritesheet_json {
+    position: absolute;
+    width:100%; height:100%;
+    border:0;
+    padding:20px;
+    font-family: monospace;
+    background: #000;
+    color: #5d5;
+    font-size: 15px;
+}
+#spritesheet_canvas {
+    display: block;
+    margin:0 auto;
+}
+#start_recording_button {
+    position: absolute;
+    left: 15px;
+    bottom:115px;   
+}
+#start_recording_button:hover {
+    bottom: 117px;
+}
+#recording_progress {
+    width:290px; height:40px;
+    padding:5px;
+    position: absolute; bottom:0;
+    background: #000;
+}
+#recording_progress_bar {
+    background: #d40;
+    width:0%; height:100%;
+}
+#recording_progress_caption {
+    font-size: 25px;
+    text-align: center;
+    color:#fff;
+    position: absolute;
+    width:290px; top:10px;
+}
+
+
+.bigass_button {
+    width:250px;
+    background: #d40;
+    border-bottom: 5px solid rgba(0,0,0,0.3);
+    padding:10px;
+    
+    color:#fff;
+    font-size: 35px;
+    text-align: center;
+    border-radius: 10px;
+    cursor: pointer;
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none; 
+}
+.bigass_button:hover {
+    background: #e51;
+}
+
+
+#modal {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top:0; left:0;
+}
+#modal_bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+}
+#modal_center {
+    position: absolute;
+    left:50%; top:50%;
+    width: 0;
+    height: 0;
+}
+#modal_dialog {
+    width:500px; height:500px;
+    background: #fff;
+    position: absolute;
+    left:-250px; top:-280px;
+}
+#download_output_gif {
+    position: absolute;
+    width:320px;
+    bottom: 30px;
+    left: 80px;
+}
+#download_output_gif:hover {
+    bottom:32px;
+}
+#output_gif {
+    position: absolute;
+}
+
+#close_and_reset {
+    font-size: 18px;
+    width:100%;
+    text-align: center;
+    position: absolute;
+    bottom:-60px;
+    width:250px;
+    left:120px;
+    background: #000;
+    color: #fff;
+    border-radius: 20px;
+    padding: 10px;
+
+    cursor: pointer;
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none; 
+}
+#close_and_reset:hover {
+    bottom:-58px;
+    background: #333;
+}
+
+#dropbox_caption {
+    position: absolute;
+    width: 282px;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    background: rgba(0, 0, 0, 0.8);
+    padding: 10px;
+    top: 170px;
+    font-size: 18px;
+}
+button {
+    cursor: pointer;
+}

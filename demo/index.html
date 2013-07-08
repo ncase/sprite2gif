@@ -1,0 +1,71 @@
+<head>
+    <title>Sprites to GIF</title>
+    <link rel="stylesheet" type="text/css" href="index.css">
+</head>
+
+<body>
+
+    <div id="step_container">
+
+        <div class="step" style="margin:0" id="dropbox">
+            <div id="caption">1. Drag & Drop Image</div>
+            <div id="container">
+                <img id="spritesheet_image"/>
+            </div>
+            <div id="dropbox_caption">
+                drag an image from your desktop<br>and drop it into this box.
+            </div>
+            <div id="sub_caption">
+                examples from <a href="http://open.commonly.cc/" target="_blank">The Open Bundle</a>:
+                <br>
+                <button onclick="loadExample('monster')">monster</button>
+                <button onclick="loadExample('explosion')">explosion</button>
+                <button onclick="loadExample('origami')">origami</button>
+            </div>
+        </div>
+
+        <div class="step">
+            <div id="caption">2. Paste JSON data</div>
+            <div id="container">
+                <textarea id="spritesheet_json"></textarea>
+            </div>
+            <div id="sub_caption">
+                uses <a href="http://www.codeandweb.com/texturepacker" target="_blank">TexturePacker</a>
+                <br>
+                JSON-Array format
+            </div>
+        </div>
+
+        <div class="step">
+            <div id="caption">3. Create yo' GIF!</div>
+            <div id="container" style="background:#fff">
+                <canvas id="spritesheet_canvas"></canvas>
+                <div class="bigass_button" id="start_recording_button" onclick="recordAnimation()">
+                    CREATE GIF
+                </div>
+                <div id="recording_progress" style="display:none">
+                    <div id="recording_progress_bar"></div>
+                    <div id="recording_progress_caption">recording...</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="modal" style="display:none">
+        <div id="modal_bg"></div>
+        <div id="modal_center">
+            <div id="modal_dialog">
+                <img id="output_gif">
+                <a id="download_output_gif_link" download="export.gif" href="">
+                    <div class="bigass_button" id="download_output_gif">DOWNLOAD GIF</div>
+                </a>
+                <div id="close_and_reset" onclick="reset()">close and make more .gifs</div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+<!-- Scripts -->
+<script src="spritegif.js"></script>
