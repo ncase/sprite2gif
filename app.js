@@ -1,3 +1,4 @@
+// A basic Express app that just serves static files
 var express = require('express');
 var app = express();
 app.use("/", express.static(__dirname + '/demo'));
