@@ -73,10 +73,14 @@ loadExample("monster");
 ///////////////////////
 
 function reset(){
+    
     document.getElementById("start_recording_button").style.display = "block";
     document.getElementById("recording_progress").style.display = "none";
     document.getElementById("modal").style.display = "none";
+    document.getElementById("recording_progress_caption").innerHTML = "recording...";
+
     canvas.width=0;
+
 }
 
 
@@ -132,18 +136,24 @@ function recordAnimation(){
 
         // Get frame data
         var data = json.frames[index];
-        index = (index+1) % json.frames.length;
+        index += 1;
+        index %= json.frames.length;
 
         // Draw in canvas
         canvas.width = width;
         canvas.height = height;
         context.fillStyle = "#fff";  
         context.fillRect(0,0,width,height);
-        context.drawImage(
-            spritesheet,
-            data.frame.x, data.frame.y, data.frame.w, data.frame.h,
-            data.spriteSourceSize.x, data.spriteSourceSize.y, data.frame.w, data.frame.h
-        );
+
+        // Coz Firefox just messes up it when width or height is zero.
+        // Instead of, you know, HANDLING it.
+        if(data.frame.w>0){
+	        context.drawImage(
+	            spritesheet,
+	            data.frame.x, data.frame.y, data.frame.w, data.frame.h,
+	            data.spriteSourceSize.x, data.spriteSourceSize.y, data.frame.w, data.frame.h
+	        );
+	    }
 
         // Recording Gif
         if(RECORDING_GIF){
