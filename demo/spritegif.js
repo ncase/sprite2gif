@@ -113,8 +113,6 @@ function recordAnimation(){
 		return;
     }
 
-//spritesheet.onload = function(){
-
     // Configure
     var width = json.frames[0].sourceSize.w;
     var height = json.frames[0].sourceSize.h;
@@ -122,12 +120,6 @@ function recordAnimation(){
 
     // Nice Style
     canvas.style.marginTop = (250-height)/2;
-
-    // Get per frame
-    /*for(var i=0;
-        var frameWidth;
-        var frameHeight;
-        imageDatas.push( context.getImageData(0,0,canvas.width,canvas.height).data );*/
 
     // Each frame
     var index = 0;
@@ -190,8 +182,6 @@ function recordAnimation(){
         }
 
     },1000/30);
-
-    //};
 
 }
 
